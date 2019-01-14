@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "live-server public/",
     "build": "webpack",
     "prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
@@ -29,7 +28,6 @@
     "express": "^4.15.4",
     "extract-text-webpack-plugin": "^3.0.0",
     "jest": "^20.0.4",
-    "live-server": "^1.2.1",
     "moment": "^2.23.0",
     "node-sass": "^4.11.0",
     "normalize.css": "^7.0.0",
