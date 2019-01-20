@@ -21,7 +21,7 @@ beforeEach(() => {
         setStartDate={setStartDate}
         setEndDate={setEndDate}
       />
-    )
+    );
 });
 
 test('should render ExpenseListFilters correctly', () => {
@@ -71,7 +71,7 @@ test('should handle data changes', () => {
 });
 
 test('should handle date focus changes', () => {
-  const calendarFocused = 'startDate';
+  const calendarFocused = 'endDate';
   wrapper.find('withStyles(DateRangePicker)').prop('onFocusChange')(calendarFocused);
   expect(wrapper.state('calendarFocused')).toBe(calendarFocused);
 });

@@ -40,7 +40,7 @@ test('should remove expense from firebase', (done) => {
       type: 'REMOVE_EXPENSE',
       id
     });
-    return database.ref(`expenses/${id}`).once('value')
+    return database.ref(`expenses/${id}`).once('value');
   }).then((snapshot) => {
     expect(snapshot.val()).toBeFalsy();
     done();
@@ -77,12 +77,6 @@ test('should edit expense from firebase', (done) => {
 });
 
 test('should setup add expense action object with provided values', () => {
-  const expenseData = {
-    description: 'Rent',
-    amount: 109500,
-    createdAt: 1000,
-    note: 'This was last months rent'
-  };
   const action = addExpense(expenses[2]);
   expect(action).toEqual({
     type: 'ADD_EXPENSE',
@@ -90,7 +84,7 @@ test('should setup add expense action object with provided values', () => {
   });
 });
 
-test('should add expenses to database and store', (done) => {
+test('should add expense to database and store', (done) => {
   const store = createMockStore({});
   const expenseData = {
     description: 'Mouse',
@@ -107,7 +101,7 @@ test('should add expenses to database and store', (done) => {
         ...expenseData
       }
     });
-    return database.ref(`'expenses/${actions[0].expense.id}`).once('value');
+    return database.ref(`expenses/${actions[0].expense.id}`).once('value');
   }).then((snapshot) => {
     expect(snapshot.val()).toEqual(expenseData);
     done();
